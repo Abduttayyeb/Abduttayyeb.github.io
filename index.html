@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Abduttayyeb</title>
+	<title>Neo-Black</title>
 	<link href="https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap" rel="stylesheet"> 
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/2d1d67d247.js" crossorigin="anonymous"></script>
 	<style>
 		* {
 			margin: 0;
@@ -14,7 +16,7 @@
 		}
 
 	.container_main {
-		margin: 10em;
+		margin: 10em 10em 7em 10em;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -57,6 +59,8 @@
     	font-size: 50px;
     	font-weight: 30px;
 
+
+
     }
 
     .capt {
@@ -68,6 +72,85 @@
     	justify-content: center;
     	text-align: center;
 
+    }
+
+/*    .line {
+
+    	height:1px ;
+    	width:120px;
+    	border-width:0;
+    	color:gray;
+    	background-color:gray;
+    	margin-left: 29em;
+    }*/
+
+    .foot {
+    	bottom: 1.5em;
+    	position: absolute;
+
+    }
+
+    .social ul {
+
+    	display: flex;
+    	transform: translate(39.5em,0);
+    }
+
+    .social ul li {
+
+    	list-style: none;
+    	margin: 0 15px;
+    }
+
+    .social ul li .fa {
+
+    	font-size: 15px;
+    	line-height: 30px;
+    	transition: 0s;
+    	color: #000;
+
+    }
+
+    .social ul li .fa:hover {
+    	color: #fff;
+    	
+    }
+
+    .social ul li:nth-child(4) .fa:hover {
+    	color: #000;
+    }
+
+
+    .social ul li a{
+    	position: relative;
+    	display: block;
+    	width: 30px;
+    	height: 30px;
+    	border-radius: 50%;
+    	background-color: #gray;
+    	text-align: center;
+    	transition: .6s;
+    	box-shadow: inset 0 5px 4px rgba(0,0,0,0.5);
+
+    }
+
+    .social ul li a:hover {
+    	transform : translate(0,-2px);
+    	box-shadow: 0 5px 4px rgba(0,0,0,0.5);
+    }
+
+    .social ul li:nth-child(1) a:hover {
+    	background-color: #1da1f2;
+    }
+
+   .social ul li:nth-child(2) a:hover {
+    	background-color: #007bb5;
+    }
+   .social ul li:nth-child(3) a:hover {
+    	background-color: #e4405f;
+    }
+   .social ul li:nth-child(4) a:hover {
+    	background-color: #fff;
     }
 	</style>
 </head>
@@ -91,11 +174,29 @@
 				</div>
 			</div>
 	</div>
+
+	
 	<div class="capt">
 		<h4>Coming Soon...</h4>
 	</div>
+
+	<footer class="foot">
+		<!-- <hr  class="line" align="center"> -->	
+
+		<div class="social">
+			<ul>
+              <li><a href="https://twitter.com/abtab_m" target="_blank"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/abduttayyeb-m-r/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="https://www.instagram.com/autohish_219/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="https://github.com/Abduttayyeb" target="_blank"><i class="fa fa-github" ></i></a></li>
+          	</ul>
+		</div>
+	</footer>
 	
-    
+
+
+	
+
 
 </body>
 </html>
