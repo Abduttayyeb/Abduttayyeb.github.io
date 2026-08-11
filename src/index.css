@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 12% 12%, rgba(139, 130, 255, 0.16), transparent 18%),
+    radial-gradient(circle at 78% 8%, rgba(161, 140, 255, 0.12), transparent 16%),
+    linear-gradient(180deg, #050915 0%, #07122c 40%, #090923 100%);
+  color: #f5f8ff;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 10% 15%, rgba(255, 255, 255, 0.06), transparent 5%),
+    radial-gradient(circle at 92% 8%, rgba(255, 255, 255, 0.05), transparent 8%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: -1;
+}
+
+::selection {
+  background: rgba(139, 130, 255, 0.85);
+  color: #01060f;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+.section-connected {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-connected::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 14% 20%, rgba(139, 130, 255, 0.22), transparent 20%),
+    radial-gradient(circle at 80% 12%, rgba(161, 145, 255, 0.15), transparent 16%),
+    radial-gradient(circle at 50% 92%, rgba(112, 98, 255, 0.09), transparent 20%);
+  pointer-events: none;
+}
+
+.section-connected::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 25%, rgba(255, 255, 255, 0.04), transparent 4%),
+    radial-gradient(circle at 85% 40%, rgba(255, 255, 255, 0.02), transparent 8%),
+    linear-gradient(130deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  opacity: 0.17;
+  pointer-events: none;
+}
+
+/* subtle focus ring for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #c17f3e;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
