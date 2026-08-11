@@ -1,6 +1,17 @@
 import React, { useState } from "react";
 import { ArrowUpRight, Github, Circle, CircleDot, CircleDashed } from "lucide-react";
 import { PROJECTS } from "../data/projects.js";
+import siptImage from "../images/sipt.png";
+import fakhriToolsImage from "../images/fakhri_tools.png";
+import paytrackImage from "../images/paytrack.png";
+
+const imageMap = {
+  "sipt.png": siptImage,
+  "fakhri_tools.png": fakhriToolsImage,
+  "paytrack.png": paytrackImage,
+};
+
+const getProjectImage = (image) => imageMap[image] || "";
 
 const STATUS_META = {
   live: { label: "Live", icon: CircleDot, className: "text-gold border-gold/40" },
@@ -32,13 +43,23 @@ function ProjectVisual({ project }) {
   }
   return (
     <div className="w-full h-full min-h-[220px] rounded-xl border border-line bg-white/5 overflow-hidden flex flex-col">
-      <div className="flex items-center gap-1.5 px-4 py-3 border-b border-line">
-        <span className="w-2.5 h-2.5 rounded-full bg-line" />
-        <span className="w-2.5 h-2.5 rounded-full bg-line" />
-        <span className="w-2.5 h-2.5 rounded-full bg-line" />
-      </div>
-      <div className="flex-1 flex items-center justify-center px-6 text-center">
-        <p className="font-display text-lg text-faint">Screenshot: {project.title}</p>
+      {project.image ? (
+        <img
+          src={getProjectImage(project.image)}
+          alt={project.title}
+          className="h-52 w-full object-cover"
+        />
+      ) : (
+        <div className="flex items-center justify-center h-52 bg-surfaceAlt text-center px-6">
+          <p className="font-display text-lg text-faint">Screenshot: {project.title}</p>
+        </div>
+      )}
+      <div className="flex-1 p-5 flex flex-col justify-between">
+        <div>
+          <h3 className="font-display text-lg text-ink_text mb-2">{project.title}</h3>
+          <p className="font-body text-sm text-muted mb-4">{project.subtitle}</p>
+          <p className="font-body text-sm leading-relaxed text-silver mb-5">{project.description}</p>
+        </div>
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ export const PROJECTS = [
     subtitle: "Shabbir Ibrahim Paints — company site rebuild",
     category: "product",
     status: "live",
+    image: "sipt.png",
     description:
       "Rebuilt the marketing site with a warm, elegant design system and SEO groundwork so the paints business shows up for the searches that actually convert.",
     stack: ["React", "SEO", "Design System"],
@@ -18,6 +19,7 @@ export const PROJECTS = [
     subtitle: "E-commerce site for a Nashik tools retailer",
     category: "product",
     status: "live",
+    image: "fakhri_tools.png",
     description:
       "A React storefront built for a local hardware & tools retailer — product catalog, categories, and enquiry flow designed for a non-technical owner to manage.",
     stack: ["React", "E-commerce"],
@@ -29,6 +31,7 @@ export const PROJECTS = [
     subtitle: "Accounts payable tracker, built from Tally exports",
     category: "product",
     status: "live",
+    image: "paytrack.png",
     description:
       "A React PWA that turns Tally-exported PDFs into a live payables view — hybrid Ledger + Invoice data model, FIFO settlement logic, and aging-bucket categorization on a Node/MongoDB backend.",
     stack: ["React", "Node.js", "MongoDB", "PWA"],
