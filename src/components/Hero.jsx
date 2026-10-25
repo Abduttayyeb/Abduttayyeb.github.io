@@ -88,7 +88,7 @@ export default function Hero() {
         <p className="mx-auto mt-7 flex max-w-3xl flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center font-body text-xs leading-5 text-slate-500 sm:text-sm">
           <span>Azure and GCP certified</span>
           <span aria-hidden="true" className="text-slate-300">·</span>
-          <span>Databricks Data Engineer Associate in progress</span>
+          <span>Preparing for Databricks Data Engineer Associate</span>
         </p>
         <div className="mx-auto mt-6 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-4">
           {SKILL_LOGOS.map((logo) => (

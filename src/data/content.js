@@ -2,7 +2,7 @@ export const PROFILE = {
   name: "Abduttayyeb Mazhar",
   shortName: "Abduttayyeb",
   role: "Senior Data and AI Engineer",
-  sub: " Engineering trusted data platforms, shipping intuitive products, and bringing agentic AI to real-world workflows.",
+  sub: "Engineering governed lakehouses, shipping intuitive products, and bringing agentic AI to real-world workflows.",
   location: "Mumbai, India",
   email: "abduttayyeb.mazhar@gmail.com",
   resumeUrl: "https://linkly.link/2yLp0",
