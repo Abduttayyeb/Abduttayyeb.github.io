@@ -1,62 +1,104 @@
 import React from "react";
-import { PROFILE, TICKER } from "../data/content.js";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { PROFILE } from "../data/content.js";
+import databricksLogo from "../images/brands/databricks.svg";
+import sparkLogo from "../images/brands/apache-spark.svg";
+import snowflakeLogo from "../images/brands/snowflake.svg";
+import azureLogo from "../images/brands/azure.svg";
+import googleCloudLogo from "../images/brands/google-cloud.svg";
+
+const SKILL_LOGOS = [
+  { name: "Databricks", src: databricksLogo },
+  { name: "Apache Spark", src: sparkLogo },
+  { name: "Snowflake", src: snowflakeLogo },
+  { name: "Azure", src: azureLogo },
+  { name: "Google Cloud", src: googleCloudLogo },
+];
+
+function DataBackdrop() {
+  return (
+    <svg
+      className="pointer-events-none absolute inset-0 h-full w-full opacity-60"
+      viewBox="0 0 1200 570"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+      <g fill="none" stroke="#9cb9c7" strokeWidth="1">
+        <path d="M0 240 C180 240 170 120 320 120 S470 240 600 240 790 100 930 130 1080 240 1200 240" />
+        <path d="M0 315 C160 315 210 420 340 390 S480 300 600 315 790 425 920 390 1080 315 1200 315" strokeDasharray="4 7" />
+        <path d="M600 0 C600 120 510 155 510 250 S600 390 600 570" strokeDasharray="3 8" />
+      </g>
+      <g fill="#f8fdff" stroke="#9cb9c7" strokeWidth="1">
+        <circle cx="160" cy="202" r="7" />
+        <circle cx="320" cy="120" r="6" />
+        <circle cx="480" cy="194" r="7" />
+        <circle cx="720" cy="195" r="6" />
+        <circle cx="930" cy="130" r="7" />
+        <circle cx="1070" cy="204" r="6" />
+        <rect x="270" y="375" width="12" height="12" rx="3" />
+        <rect x="902" y="382" width="12" height="12" rx="3" />
+      </g>
+      <g fill="#32c5d0">
+        <circle cx="320" cy="120" r="3" />
+        <circle cx="720" cy="195" r="3" />
+        <circle cx="930" cy="130" r="3" />
+      </g>
+    </svg>
+  );
+}
 
 export default function Hero() {
   return (
-    <section id="home" className="section-connected px-6 md:px-10 pt-16 md:pt-24">
-      <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
-        {/* Text side */}
-        <div>
-          <p className="font-body text-[11px] uppercase tracking-[0.5em] text-silver/50 mb-4">
-            {PROFILE.location.toUpperCase()} — OPEN TO REMOTE WORK
+    <section className="relative isolate overflow-hidden bg-[radial-gradient(ellipse_at_50%_34%,rgba(191,238,243,0.55),transparent_53%),linear-gradient(180deg,#f4f9fc_0%,#f8fbfd_78%,#ffffff_100%)] px-5 pb-2 pt-14 sm:px-8 sm:pb-3 sm:pt-20 md:pb-4 md:pt-24">
+      <DataBackdrop />
+      <div className="relative mx-auto max-w-6xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/70 px-3.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-slate-500 shadow-sm sm:text-[11px]">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+            {PROFILE.location} <span className="text-slate-300">/</span> Data &amp; AI
           </p>
-          <h1 className="font-display text-4xl md:text-5xl font-semibold leading-[1.05] text-ink_text mb-4 max-w-2xl">
-            Innovative Software Solutions
+          <h1 className="font-display text-[2.65rem] font-semibold leading-[1.03] tracking-[-0.055em] text-slate-900 sm:text-6xl md:text-[4.5rem]">
+            Building data platforms
+            <br className="hidden sm:block" /> that{" "}
+            <span className="bg-gradient-to-r from-cyan-700 to-teal-500 bg-clip-text text-transparent">
+              think.
+            </span>
           </h1>
-          <p className="font-display text-2xl md:text-3xl text-bronze/90 mb-8 max-w-xl">
-            Connected data engineering and product experiences.
+          <p className="mx-auto mt-5 max-w-2xl font-body text-sm leading-6 text-slate-600 sm:mt-6 sm:text-base sm:leading-7">
+            {PROFILE.sub}
           </p>
-          <p className="font-body text-base md:text-lg text-muted max-w-2xl mb-10">
-            Azure Databricks, PySpark, Delta Lake, and product builds that scale.
-          </p>
-
-          <div className="flex flex-wrap gap-3">
+          <div className="mt-7 flex flex-wrap justify-center gap-3">
             <a
-              href="#contact"
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-bronze to-gold px-7 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-ink shadow-[0_18px_50px_rgba(139,130,255,0.22)] transition hover:opacity-95"
+              href="#work"
+              className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-5 py-3 text-sm font-medium text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-slate-700"
             >
-              About me
+              Explore my work <ArrowDown size={15} />
             </a>
             <a
               href={PROFILE.resumeUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-full border border-silver/30 px-7 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-ink_text transition hover:bg-white/5 hover:border-bronze"
+              className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white/80 px-5 py-3 text-sm font-medium text-slate-700 transition hover:border-slate-400 hover:bg-white"
             >
-              Let's talk
+              View resume <ArrowUpRight size={15} />
             </a>
           </div>
         </div>
 
-        {/* Visual side — abstract monogram instead of a stock/fake photo.
-            Swap this block for an <img> of your own headshot if you'd like. */}
-        <div className="relative flex items-center justify-center py-10">
-          <div className="absolute -left-6 top-8 h-56 w-56 md:h-72 md:w-72 rounded-full border border-bronze/20" />
-          <div className="absolute right-4 top-12 h-48 w-48 md:h-64 md:w-64 rounded-full border border-silver/20" />
-          <div className="absolute h-48 w-48 md:h-60 md:w-60 rounded-full bg-gradient-to-br from-[#5FA3FF]/25 via-transparent to-[#B8C9F0]/12 blur-3xl" />
-          <div className="relative h-40 w-40 md:h-48 md:w-48 rounded-full bg-white/5 border border-line flex items-center justify-center">
-            <span className="font-display text-5xl md:text-7xl font-semibold text-ink_text">
-              {PROFILE.initials}
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Tech ticker strip */}
-      <div className="relative max-w-6xl mx-auto mt-20 border-t border-b border-line py-6 overflow-hidden">
-        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 font-mono text-sm text-faint">
-          {TICKER.map((t) => (
-            <span key={t}>{t}</span>
+        <p className="mx-auto mt-7 flex max-w-3xl flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center font-body text-xs leading-5 text-slate-500 sm:text-sm">
+          <span>Azure and GCP certified</span>
+          <span aria-hidden="true" className="text-slate-300">·</span>
+          <span>Databricks Data Engineer Associate in progress</span>
+        </p>
+        <div className="mx-auto mt-6 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-4">
+          {SKILL_LOGOS.map((logo) => (
+            <img
+              key={logo.name}
+              src={logo.src}
+              alt={logo.name}
+              title={logo.name}
+              className="h-6 w-auto max-w-[88px] object-contain grayscale opacity-55 transition duration-300 hover:grayscale-0 hover:opacity-100"
+            />
           ))}
         </div>
       </div>

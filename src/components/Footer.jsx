@@ -1,32 +1,42 @@
 import React from "react";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { PROFILE } from "../data/content.js";
+import SectionHeader from "./SectionHeader.jsx";
 
 export default function Footer() {
+  const mailto = `mailto:${PROFILE.email}`;
+
   return (
-    <footer className="px-6 md:px-10 py-14 border-t border-line">
-      <div className="max-w-6xl mx-auto flex flex-col items-center text-center gap-6">
-        <p className="font-display text-lg font-semibold text-ink_text">{PROFILE.name}</p>
-        <p className="font-body text-sm text-muted">
-          Designed & built by {PROFILE.name.split(" ")[0]}. All rights reserved.
-        </p>
-        <div className="flex items-center gap-6">
-          <a href={`mailto:${PROFILE.email}`} aria-label="Email">
-            <Mail size={18} className="text-muted hover:text-bronze transition-colors" />
-          </a>
-          <a href={PROFILE.github} target="_blank" rel="noreferrer" aria-label="GitHub">
-            <Github size={18} className="text-muted hover:text-bronze transition-colors" />
-          </a>
-          <a href={PROFILE.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
-            <Linkedin size={18} className="text-muted hover:text-bronze transition-colors" />
-          </a>
-          <a href={PROFILE.twitter} target="_blank" rel="noreferrer" aria-label="Twitter">
-            <Twitter size={18} className="text-muted hover:text-bronze transition-colors" />
+    <footer>
+      <section id="contact" className="section-anchor glow-surface border-y border-line">
+        <div className="site-container section-space flex flex-col gap-7 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <SectionHeader eyebrow="Contact" title="Have a project? Let's" accent="talk." />
+            <a href={mailto} className="mt-5 inline-block text-sm text-muted transition-colors hover:text-navy">
+              {PROFILE.email}
+            </a>
+          </div>
+          <a href={mailto} className="primary-button w-fit">
+            Email me <ArrowRight size={15} />
           </a>
         </div>
-        <p className="font-mono text-[11px] text-faint">
-          © {new Date().getFullYear()} {PROFILE.name}
-        </p>
+      </section>
+
+      <div className="site-container flex flex-col gap-3 border-t border-line py-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+        <p>© {new Date().getFullYear()} {PROFILE.name}</p>
+        <div className="flex flex-wrap items-center gap-2">
+          <a href={PROFILE.github} target="_blank" rel="noreferrer" className="transition-colors hover:text-navy">
+            GitHub
+          </a>
+          <span aria-hidden="true">·</span>
+          <a href={PROFILE.linkedin} target="_blank" rel="noreferrer" className="transition-colors hover:text-navy">
+            LinkedIn
+          </a>
+          <span aria-hidden="true">·</span>
+          <a href={mailto} className="transition-colors hover:text-navy">
+            Email
+          </a>
+        </div>
       </div>
     </footer>
   );

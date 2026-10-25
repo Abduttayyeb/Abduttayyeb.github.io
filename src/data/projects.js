@@ -1,62 +1,65 @@
-// Edit this list to add, remove, or update projects.
-// status: "live" | "progress" | "concept"
+// status: "live" | "progress" | "concept" | "case"
 // category: "data" | "product"
+// visual: wireframe key for data cards without screenshots
 export const PROJECTS = [
   {
+    title: "WardStream",
+    category: "data",
+    status: "progress",
+    visual: "vitals",
+    description:
+      "Patient vitals streaming on Azure with Event Hubs and Delta Lake tables.",
+    stack: ["Databricks", "DLT", "Event Hubs"],
+    link: "",
+    github: "",
+  },
+  {
+    title: "ShopPulse",
+    category: "data",
+    status: "case",
+    visual: "medallion",
+    description: "GCP medallion analytics platform with an agent on top.",
+    stack: ["BigQuery", "Composer", "ADS"],
+    link: "",
+    github: "",
+  },
+  {
+    title: "RouteSentinel",
+    category: "data",
+    status: "concept",
+    visual: "pipeline",
+    description: "Multi-cloud supply chain ops with an agentic pipeline watcher.",
+    stack: ["Databricks", "BigQuery", "OpenMetadata"],
+    link: "",
+    github: "",
+  },
+  {
     title: "sipt.ae",
-    subtitle: "Shabbir Ibrahim Paints — company site rebuild",
     category: "product",
     status: "live",
     image: "sipt.png",
-    description:
-      "Rebuilt the marketing site with a warm, elegant design system and SEO groundwork so the paints business shows up for the searches that actually convert.",
-    stack: ["React", "SEO", "Design System"],
+    description: "Marketing site rebuild with SEO groundwork.",
+    stack: ["React", "SEO"],
     link: "https://sipt.ae",
     github: "",
   },
   {
-    title: "Fakhri Tools Corporation",
-    subtitle: "E-commerce site for a Nashik tools retailer",
+    title: "Fakhri Tools",
     category: "product",
     status: "live",
     image: "fakhri_tools.png",
-    description:
-      "A React storefront built for a local hardware & tools retailer — product catalog, categories, and enquiry flow designed for a non-technical owner to manage.",
+    description: "E-commerce storefront for a local tools retailer.",
     stack: ["React", "E-commerce"],
     link: "",
     github: "",
   },
   {
     title: "PayTrack",
-    subtitle: "Accounts payable tracker, built from Tally exports",
     category: "product",
     status: "live",
     image: "paytrack.png",
-    description:
-      "A React PWA that turns Tally-exported PDFs into a live payables view — hybrid Ledger + Invoice data model, FIFO settlement logic, and aging-bucket categorization on a Node/MongoDB backend.",
-    stack: ["React", "Node.js", "MongoDB", "PWA"],
-    link: "",
-    github: "",
-  },
-  {
-    title: "WardStream",
-    subtitle: "Patient vitals streaming platform",
-    category: "data",
-    status: "progress",
-    description:
-      "Streaming ingestion via Event Hubs into Delta Live Tables, medallion architecture on Unity Catalog (bronze to silver to gold), Azure IAM wired through Access Connector and Managed Identity. Bronze and silver layers are live; gold-layer design is in progress.",
-    stack: ["Databricks", "DLT", "Event Hubs", "Unity Catalog"],
-    link: "",
-    github: "",
-  },
-  {
-    title: "RouteSentinel",
-    subtitle: "Multi-cloud supply chain ops platform",
-    category: "data",
-    status: "concept",
-    description:
-      "Architecture in design: Azure Databricks + BigQuery via Lakehouse Federation, OpenMetadata for lineage, and a ZeroOps-style agentic watcher for pipeline health. Build starting soon.",
-    stack: ["Databricks", "BigQuery", "OpenMetadata", "Agentic AI"],
+    description: "Accounts payable PWA built from Tally exports.",
+    stack: ["React", "Node.js", "MongoDB"],
     link: "",
     github: "",
   },
