@@ -36,5 +36,6 @@ export const ABOUT = {
   paragraphs: [
     "I'm a Senior Data and AI Engineer working across Azure Databricks, PySpark, and Delta Lake — designing lakehouse platforms, streaming pipelines, and Unity Catalog architectures for production workloads.",
     "Alongside that, I build products for small businesses and myself — React apps, PWAs, and company sites — because shipping something a real user touches keeps the engineering honest.",
+    "Outside work, I practice recitation and vocal training, read blogs, and binge podcasts and new shows. I love going to events, meeting new people, and finding my best ideas in new places.",
   ],
 };
